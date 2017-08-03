@@ -4,21 +4,22 @@ import {
   Text,
   View
 } from 'react-native';
+import Realm from 'realm';
+import History from './Services/Models/History';
 
 export default class SpatialMap extends Component {
+
   render() {
+
+    // // Create database for table History
+
+    // History.write(() => {
+    //   History.create('History', {Name: 'TMA 2'});
+    // });
+
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+         <Text>{History.objects('History')[0].Name}</Text> 
       </View>
     );
   }
